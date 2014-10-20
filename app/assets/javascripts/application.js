@@ -30,8 +30,7 @@ function nextQuestion() {
       $.each(data, function () {
         quizLength++;
       });
-      console.log(questionNumber);
-      console.log(quizLength);
+
       if (questionNumber < (quizLength-1)) {
         questionNumber++;
         getQuestion();
@@ -41,7 +40,6 @@ function nextQuestion() {
         $('.answers').empty();
         $('#next').remove();
         $('.score').append('<h1>Score:' + score + '</h1>')
-        console.log("finsihed")
       }
 
     })
@@ -60,7 +58,6 @@ function checkAnswer() {
             if (ans.correct === true) {
               $(button).removeClass('btn-default').addClass('btn-success');
               score++;
-              console.log(score);
               $('.submit').remove();
               $('#next').remove();
               $('.nav').append('<button class="btn btn-primary" id="next">Next Question</button>')
